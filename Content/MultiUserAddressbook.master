@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MultiUserAddressbook.master.cs" Inherits="Content_Addressbook" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <%--<link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet" />--%>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/Style.css" rel="stylesheet" />
+    <%--<script src="~/Content/js/bootstrap.bundle.min.js"></script>--%>
+    <%--<script src="~/Content/js/bootstrap.min.js"></script>--%>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="nav justify-content-center">
+                        <h1><b>MultiUser Address Book</b></h1>
+                    </div>
+                    <div class="nav justify-content-center">
+                        <asp:HyperLink  runat="server" ID="hlCountry" Text="Country" NavigateUrl="/AdminPanel/Country/List" />&nbsp;&nbsp|&nbsp;&nbsp
+                        <asp:HyperLink runat="server" ID="hlState" Text="State" NavigateUrl="/AdminPanel/State/List" />&nbsp;&nbsp|&nbsp;&nbsp
+                        <asp:HyperLink runat="server" ID="hlCity" Text="City" NavigateUrl="/AdminPanel/City/List" />&nbsp;&nbsp|&nbsp;&nbsp
+                        <asp:HyperLink runat="server" ID="hlContactCategory" Text="ContactCategory" NavigateUrl="/AdminPanel/ContactCategory/List" />&nbsp;&nbsp|&nbsp;&nbsp
+                        <asp:HyperLink runat="server" ID="hlContact" Text="Contact" NavigateUrl="/AdminPanel/Contact/List" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <asp:Label runat="server" ID="lblUserName" />&nbsp;&nbsp|&nbsp;&nbsp
+                    <asp:LinkButton runat="server" ID="lbtnLogout" Text="Logout" class="btn btn-default" OnClick="lbtnLogout_Click"/>
+                </div>
+            </div><hr />
+            <div class="row">
+                <div class="col-md-12">
+                    <asp:ContentPlaceHolder ID="cphMainContnet" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center">
+                    <hr />
+                   <h4> <b>Abhay Chothani | 190540107032 | 190540107032@darshan.ac.in</b></h4>
+                </div>
+            </div>
+        </div>
+        <div>
+        </div>
+    </form>
+
+     <%--<form id="form1" runat="server">
+        <div class="container w-100 p-0 m-0">
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1 w-100">
+                <a class="navbar-brand" href="#">Address Book</a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <asp:HyperLink runat="server" ID="hlContact" NavigateUrl="~/AdminPanel/Contact/ContactList.aspx" CssClass="nav-link active"> Contact </asp:HyperLink>
+                        </li>
+                        <li class="nav-item ">
+                            <asp:HyperLink runat="server" ID="hlContactCategory" NavigateUrl="~/AdminPanel/ContactCategory/ContactCategoryList.aspx" CssClass="nav-link"> Contact Category </asp:HyperLink>
+                        </li>
+                        <li class="nav-item ">
+                            <asp:HyperLink runat="server" ID="hlCity" NavigateUrl="~/AdminPanel/City/CityList.aspx" CssClass="nav-link"> City </asp:HyperLink>
+                        </li>
+                        <li class="nav-item ">
+                            <asp:HyperLink runat="server" ID="hlState" NavigateUrl="~/AdminPanel/State/StateList.aspx" CssClass="nav-link"> State </asp:HyperLink>
+                        </li>
+                        <li class="nav-item ">
+                            <asp:HyperLink runat="server" ID="hlCountry" NavigateUrl="~/AdminPanel/Contact/ContactList.aspx" CssClass="nav-link"> Country </asp:HyperLink>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navbar-text me-3 font-monospace">
+                    <asp:Label runat="server" ID="lblUserName"></asp:Label>
+                    <asp:Image runat="server" ID="imgProfile" Width="45px" CssClass="irounded-circle z-depth-0" />
+                </div>
+
+               <div class="navbar-text">
+                    <asp:Button runat="server" ID="lbtnLogout" CausesValidation="false" Text="Logout" OnClick="lbtnLogout_Click" CssClass="btn btn-light" />
+                </div>
+            </nav>
+
+            <div>
+                <asp:ContentPlaceHolder ID="cphMainContnet" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+    </form>--%>
+
+</body>
+</html>
