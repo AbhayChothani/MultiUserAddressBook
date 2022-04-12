@@ -21,7 +21,7 @@ public partial class AdminPanel_City_CityList : System.Web.UI.Page
     }
     #endregion Load Event
 
-#region FillCityGridView
+    #region FillCityGridView
     private void FillCityGridView()
     {
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["AddressBookConnectionString"].ConnectionString);
@@ -67,6 +67,7 @@ public partial class AdminPanel_City_CityList : System.Web.UI.Page
         }
     }
     #endregion gvCity_RowCommand
+
     #region DeleteCity
     private void DeleteCity(SqlInt32 CityID)
     {

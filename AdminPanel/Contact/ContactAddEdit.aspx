@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content/MultiUserAddressbook.master" AutoEventWireup="true" CodeFile="ContactAddEdit.aspx.cs" Inherits="AdminPanel_Contact_ContactAddEditt" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Content/MultiUserAddressbook.master" AutoEventWireup="true" CodeFile="ContactAddEdit.aspx.cs" Inherits="AdminPanel_Contact_ContactAddEditt" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="Server">
    
@@ -78,7 +78,7 @@
                             <asp:FileUpload runat="server" ID="fuContactPhotoPath" />
                         </div>
                         <div class="col-md-4 text-center ">
-                            <asp:Image runat="server" ID="imgOldPhoto" EnableViewState="false" Height="70px" Width="70px" />
+                            <asp:Image runat="server" ID="imgOldPhoto" EnableViewState="true" Height="70px" Width="70px" />
                         </div>
                     </div>
                     <br />
@@ -187,7 +187,7 @@
         </div>
         <div class="col-md-4">
             <h5>Contact Category</h5>
-            <asp:CheckBoxList runat="server" ID="cblContactCategoryID" />
+            <asp:CheckBoxList runat="server" ID="cblContactCategoryID" RepeatDirection="Horizontal" />
         </div>
     </div>
 

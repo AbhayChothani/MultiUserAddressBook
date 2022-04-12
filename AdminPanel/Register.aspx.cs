@@ -17,7 +17,7 @@ public partial class AdminPanel_Register : System.Web.UI.Page
     }
     #endregion Load Event
 
-
+    
     #region btnRegister_Click
     protected void btnRegister_Click(object sender, EventArgs e)
     {

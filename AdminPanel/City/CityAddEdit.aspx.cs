@@ -152,7 +152,7 @@ public partial class AdminPanel_City_CityAddEdit : System.Web.UI.Page
     protected void ddlCountryID_SelectedIndexChanged(object sender, EventArgs e)
     {
         
-        //ddlStateID.Items.Clear();
+        ddlStateID.Items.Clear();
         fillState();
     }
     #endregion ddlCountryID_SelectedIndexChanged

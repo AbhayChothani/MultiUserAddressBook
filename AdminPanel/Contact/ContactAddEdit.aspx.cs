@@ -24,12 +24,12 @@ public partial class AdminPanel_Contact_ContactAddEditt : System.Web.UI.Page
             {
                 lblMessage.Text = "<b>--- Edit Mode | ContactID = </b>" + EncryptDecrypt.Base64Decode(Page.RouteData.Values["ContactID"].ToString());
                 FillContactControls(Convert.ToInt32(EncryptDecrypt.Base64Decode(Page.RouteData.Values["ContactID"].ToString().Trim())));
-                
+
             }
             else
             {
                 lblMessage.Text = "<b>--- Add Mode ---</b>";
-
+                imgOldPhoto.Visible = false;
             }
 
 
@@ -64,7 +64,7 @@ public partial class AdminPanel_Contact_ContactAddEditt : System.Web.UI.Page
 
         #region Server Side Validation
         String strErrorMessage = "";
-
+        
         if (ddlCountryID.SelectedItem.Text == "Select Country")
             strErrorMessage += "- Select Country  ||  ";
         if (ddlStateID.SelectedItem.Text == "Select State")
@@ -75,7 +75,7 @@ public partial class AdminPanel_Contact_ContactAddEditt : System.Web.UI.Page
         //    strErrorMessage += "- Select Contact category<br/>";
         if (txtContactName.Text.Trim() == "")
             strErrorMessage += "- Enter Contact Name  ||  ";
-        if (!fuContactPhotoPath.HasFile)
+        if (!fuContactPhotoPath.HasFile && imgOldPhoto.ImageUrl == "")
             strErrorMessage += "- Upload Photo <br/>";
         if (txtContactNo.Text.Trim() == "")
             strErrorMessage += "- Enter Contact No <br/>";
@@ -108,6 +108,10 @@ public partial class AdminPanel_Contact_ContactAddEditt : System.Web.UI.Page
         {
             ContactPhotoPath = "~/UserContent/" + fuContactPhotoPath.FileName.ToString().Trim();
             fuContactPhotoPath.SaveAs(Server.MapPath(ContactPhotoPath));
+        }
+        else
+        {
+            ContactPhotoPath = imgOldPhoto.ImageUrl;
         }
 
         #region Gather Information
@@ -191,6 +195,7 @@ public partial class AdminPanel_Contact_ContactAddEditt : System.Web.UI.Page
             //SqlInt32 ContactID = EncryptDecrypt.Base64Decode(Page.RouteData.Values["ContactID"]);
             if (Page.RouteData.Values["ContactID"] != null)
             {
+                
                 #region Update Record
                 //edit Mode
                 objCmd.Parameters.AddWithValue("@ContactID", EncryptDecrypt.Base64Decode(Page.RouteData.Values["ContactID"].ToString().Trim()));
